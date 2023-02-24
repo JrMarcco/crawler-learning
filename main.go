@@ -23,7 +23,8 @@ func main() {
 		chromedp.Navigate("https://pkg.go.dev/time"),
 		chromedp.WaitVisible("body > footer"),
 		chromedp.Click("#example-After", chromedp.NodeVisible),
-		chromedp.Value("#example-After", &example),
+		chromedp.Value("#example-After textarea"+
+			"", &example),
 	)
 	if err != nil {
 		log.Fatal(err)
